@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/lwcopy.min.css">
+    <link rel="stylesheet" href="./text/main.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/lwcopy.min.js"></script>
+  </head>
+  <body>
+<pre class="prettyprint lang-python">
+<span class="com"># @File:    code01.py</span><span class="pln">
+</span><span class="com"># @Author:  lengwen</span><span class="pln">
+</span><span class="com"># @Time:    2019-07-25 09:46</span><span class="pln">
+</span><span class="com"># @Desc:    使用原生urllib3库的方式进行爬虫</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> urllib3
+</span><span class="com"># 生成一个HTTP请求对象, 由该对象处理与线程池的连接以及线程安全的所有细节</span><span class="pln">
+http </span><span class="pun">=</span><span class="pln"> urllib3</span><span class="pun">.</span><span class="typ">PoolManager</span><span class="pun">()</span><span class="pln">
+</span><span class="com"># 发送HTTP请求</span><span class="pln">
+resp </span><span class="pun">=</span><span class="pln"> http</span><span class="pun">.</span><span class="pln">request</span><span class="pun">(</span><span class="pln">url</span><span class="pun">=</span><span class="str">'http://www.163.com'</span><span class="pun">,</span><span class="pln">method</span><span class="pun">=</span><span class="str">'get'</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应对象</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应状态码</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">.</span><span class="pln">status</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应数据</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">.</span><span class="pln">data</span><span class="pun">)</span></pre>
+
+<pre class="prettyprint lang-python">
+<span class="com"># @File:    code01.py</span><span class="pln">
+</span><span class="com"># @Author:  lengwen</span><span class="pln">
+</span><span class="com"># @Time:    2019-07-25 09:46</span><span class="pln">
+</span><span class="com"># @Desc:    使用原生urllib3库的方式进行爬虫</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> urllib3
+</span><span class="com"># 生成一个HTTP请求对象, 由该对象处理与线程池的连接以及线程安全的所有细节</span><span class="pln">
+http </span><span class="pun">=</span><span class="pln"> urllib3</span><span class="pun">.</span><span class="typ">PoolManager</span><span class="pun">()</span><span class="pln">
+</span><span class="com"># 发送HTTP请求</span><span class="pln">
+resp </span><span class="pun">=</span><span class="pln"> http</span><span class="pun">.</span><span class="pln">request</span><span class="pun">(</span><span class="pln">url</span><span class="pun">=</span><span class="str">'http://www.163.com'</span><span class="pun">,</span><span class="pln">method</span><span class="pun">=</span><span class="str">'get'</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应对象</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="str">"响应对象"</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应状态码</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="str">"状态码"</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">resp</span><span class="pun">.</span><span class="pln">status</span><span class="pun">)</span><span class="pln">
+</span><span class="com"># 打印响应数据</span><span class="pln">
+</span><span class="com"># print("响应数据")</span><span class="pln">
+</span><span class="com"># print(resp.data)</span><span class="pln">
+</span><span class="com"># 解码</span><span class="pln">
+data </span><span class="pun">=</span><span class="pln"> resp</span><span class="pun">.</span><span class="pln">data</span><span class="pun">.</span><span class="pln">decode</span><span class="pun">(</span><span class="str">'gbk'</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="str">"解码后的数据"</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span></pre>
+
+  </body>
+</html>
